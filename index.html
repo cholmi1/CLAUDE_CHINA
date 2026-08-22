@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CVT200 부재료 소싱 · 중국 출장 현장수첩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#0E1D2B; --ink2:#33485C; --ink3:#6B8199;
+  --paper:#FFFFFF; --wash:#EEF3F7; --wash2:#F7FAFC;
+  --line:#D3DEE7; --line2:#E6EDF3;
+  --jade:#0B6E60; --jade-s:#E0EFEC;
+  --flag:#B23227; --flag-s:#FBEBE8;
+  --gold:#8A6413; --gold-s:#F6EFDF;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  --maxw:940px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--wash);color:var(--ink);
+  line-height:1.6;font-size:15px;letter-spacing:-.01em;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+/* ── 헤더 ── */
+.masthead{background:var(--ink);color:#fff;padding:26px 0 22px;position:relative;overflow:hidden}
+.masthead::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;
+  background:linear-gradient(90deg,var(--jade) 0 32%,var(--gold) 32% 62%,var(--flag) 62% 100%)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:#8FA8BC;text-transform:uppercase}
+h1{font-size:26px;font-weight:800;letter-spacing:-.03em;margin:6px 0 2px;line-height:1.2}
+.sub{color:#A9BFD1;font-size:13.5px}
+.dbadge{display:inline-flex;align-items:baseline;gap:7px;margin-top:14px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  padding:7px 13px;border-radius:999px}
+.dbadge b{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:-.02em}
+.dbadge span{font-size:12px;color:#A9BFD1}
+
+/* ── 노선 레일 ── */
+.rail{display:flex;align-items:stretch;margin-top:18px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);border-radius:10px;overflow:hidden}
+.leg{flex:1;padding:9px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.1);min-width:0}
+.leg:last-child{border-right:0}
+.leg .c{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.02em}
+.leg .m{font-size:10.5px;color:#8FA8BC;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ── 경고 칩 ── */
+.alerts{display:grid;gap:8px;margin:16px 0 4px}
+@media(min-width:700px){.alerts{grid-template-columns:repeat(3,1fr)}}
+.alert{background:var(--flag-s);border:1px solid #EBC7C0;border-left:3px solid var(--flag);
+  border-radius:8px;padding:10px 12px}
+.alert .t{font-size:12px;font-weight:700;color:var(--flag);letter-spacing:-.01em}
+.alert .d{font-size:12.5px;color:var(--ink2);margin-top:2px}
+
+/* ── 탭 ── */
+.tabbar{position:sticky;top:0;z-index:40;background:rgba(238,243,247,.94);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:18px}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding:9px 0;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--paper);color:var(--ink2);
+  border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;
+  font-family:inherit;letter-spacing:-.01em;transition:.14s;white-space:nowrap}
+.tab .n{font-family:var(--mono);font-size:11px;color:var(--ink3);margin-right:5px}
+.tab:hover{border-color:var(--ink3)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab[aria-selected="true"] .n{color:#8FA8BC}
+.tab:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+
+/* ── 섹션 ── */
+section{padding:22px 0 8px}
+.shead{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap}
+.shead h2{font-size:19px;font-weight:800;letter-spacing:-.03em}
+.shead .tag{font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:5px;
+  background:var(--jade-s);color:var(--jade);font-weight:600}
+.shead .tag.core{background:var(--gold-s);color:var(--gold)}
+.snote{color:var(--ink3);font-size:13px;margin-bottom:14px}
+
+/* ── 타임라인 ── */
+.tl{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:76px 1fr;gap:0;border-bottom:1px solid var(--line2)}
+.row:last-child{border-bottom:0}
+.row .tm{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink2);
+  padding:12px 8px 12px 12px;background:var(--wash2);border-right:1px solid var(--line2);
+  line-height:1.35}
+.row .bd{padding:11px 13px}
+.row .ti{font-size:14px;font-weight:600;letter-spacing:-.015em}
+.row .ds{font-size:13px;color:var(--ink2);margin-top:3px}
+.row .ds li{margin-left:15px;margin-top:2px}
+.row.key{background:#FCFEFD}
+.row.key .tm{background:var(--jade-s);color:var(--jade);font-weight:600}
+.row.key .ti{color:var(--jade)}
+.row.appt .tm{background:var(--gold-s);color:var(--gold);font-weight:600}
+.row.appt{background:#FFFDF7}
+.row.appt .ti{color:var(--gold)}
+.row.move .ti{font-weight:500;color:var(--ink2)}
+.pill{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:1px 6px;
+  border-radius:4px;background:var(--wash);color:var(--ink3);margin-left:6px;vertical-align:1px}
+
+/* ── 카드 ── */
+.cards{display:grid;gap:10px;margin-top:12px}
+@media(min-width:700px){.cards.two{grid-template-columns:1fr 1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:13px 14px}
+.card h3{font-size:14.5px;font-weight:700;letter-spacing:-.02em}
+.card .cn{font-size:12.5px;color:var(--ink3);margin-top:1px}
+.card .meta{font-size:12.5px;color:var(--ink2);margin-top:7px}
+.card .meta b{color:var(--ink);font-weight:600}
+.booth{font-family:var(--mono);font-size:12px;background:var(--wash);border:1px dashed var(--line);
+  border-radius:6px;padding:5px 8px;margin-top:8px;display:inline-block;color:var(--ink)}
+.acts{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.btn{font-family:inherit;font-size:12px;font-weight:600;border-radius:7px;padding:6px 10px;
+  border:1px solid var(--line);background:var(--paper);color:var(--ink2);cursor:pointer;
+  text-decoration:none;display:inline-block;transition:.14s}
+.btn:hover{border-color:var(--ink3);color:var(--ink)}
+.btn.p{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.j{background:var(--jade);color:#fff;border-color:var(--jade)}
+.btn:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+
+/* ── 표 ── */
+.tbl{width:100%;border-collapse:collapse;background:var(--paper);
+  border:1px solid var(--line);border-radius:11px;overflow:hidden;font-size:13px}
+.tbl th{background:var(--wash);text-align:left;padding:9px 11px;font-weight:700;font-size:12px;
+  color:var(--ink2);border-bottom:1px solid var(--line)}
+.tbl td{padding:9px 11px;border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td b{color:var(--ink)}
+.tbl .num{font-family:var(--mono);font-size:12.5px;text-align:right;white-space:nowrap;color:var(--ink)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll .tbl{min-width:560px}
+
+/* ── 체크리스트 ── */
+.chk{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:6px 4px}
+.ci{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border-bottom:1px solid var(--line2);cursor:pointer}
+.ci:last-child{border-bottom:0}
+.ci input{margin-top:3px;width:16px;height:16px;accent-color:var(--jade);flex:0 0 auto;cursor:pointer}
+.ci .cx{font-size:13.5px;color:var(--ink2)}
+.ci input:checked+.cx{color:var(--ink3);text-decoration:line-through}
+.grp{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--jade);
+  padding:12px 11px 5px;font-weight:600;text-transform:uppercase}
+
+/* ── 택시 카드 오버레이 ── */
+.ov{position:fixed;inset:0;background:rgba(14,29,43,.96);z-index:100;display:none;
+  align-items:center;justify-content:center;padding:22px}
+.ov.on{display:flex}
+.ovc{background:#fff;border-radius:16px;padding:26px 22px;max-width:460px;width:100%;text-align:center}
+.ovc .lb{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink3)}
+.ovc .zh{user-select:all;-webkit-user-select:all;font-size:25px;font-weight:800;line-height:1.5;margin:14px 0;color:var(--ink);
+  word-break:break-all;letter-spacing:-.01em}
+.ovc .ko{font-size:13.5px;color:var(--ink3)}
+.ovc .cl{margin-top:16px}
+.ovacts{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.ovacts .btn{font-size:13px;padding:9px 14px}
+.ovhint{font-size:11.5px;color:var(--ink3);margin-top:12px;line-height:1.5}
+
+/* ── 알림 ── */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);z-index:120;
+  background:var(--ink);color:#fff;font-size:13px;padding:9px 16px;border-radius:999px;
+  opacity:0;pointer-events:none;transition:.22s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.note{background:var(--jade-s);border:1px solid #BFDDD7;border-left:3px solid var(--jade);
+  border-radius:8px;padding:11px 13px;font-size:13px;color:var(--ink2);margin-top:12px}
+.note b{color:var(--jade)}
+.warn{background:var(--flag-s);border:1px solid #EBC7C0;border-left:3px solid var(--flag);
+  border-radius:8px;padding:11px 13px;font-size:13px;color:var(--ink2);margin-top:12px}
+.warn b{color:var(--flag)}
+.fill{background:var(--gold-s);border:1px dashed var(--gold);border-radius:8px;
+  padding:11px 13px;font-size:13px;color:var(--ink2);margin-top:10px}
+.fill b{color:var(--gold)}
+
+footer{margin-top:30px;padding:20px 0 34px;border-top:1px solid var(--line);
+  color:var(--ink3);font-size:12px;text-align:center}
+[hidden]{display:none !important}
+@media(prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto}}
+@media print{
+  .tabbar,.acts,.ov,.toast{display:none !important}
+  body{background:#fff;font-size:11px}
+  [role="tabpanel"][hidden]{display:block !important}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">씨엔브이텍(주) · 경영지원부</div>
+    <h1>CVT200 부재료 소싱 · 중국 출장 현장수첩</h1>
+    <div class="sub">2026. 9. 7(월) ~ 9. 11(금) · 4박 5일 · 강철희 전무이사 1인</div>
+    <div class="dbadge"><b id="dcount">D-—</b><span id="dlabel">출발까지</span></div>
+
+    <div class="rail">
+      <div class="leg"><div class="c">ICN</div><div class="m">08:40 KE835</div></div>
+      <div class="leg"><div class="c">SZX</div><div class="m">선전 2박</div></div>
+      <div class="leg"><div class="c">YIW</div><div class="m">CZ3876</div></div>
+      <div class="leg"><div class="c">HGH</div><div class="m">고속철 경유</div></div>
+      <div class="leg"><div class="c">ICN</div><div class="m">OZ360 18:15</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="alerts">
+    <div class="alert">
+      <div class="t">9/8 선전 정산 마감</div>
+      <div class="d">9/9는 오전 출발편(10:45). 선전 샘플 수령·대금 정산·택배 발송을 9/8 안에 끝내야 합니다.</div>
+    </div>
+    <div class="alert">
+      <div class="t">9/11 환승 여유 55분</div>
+      <div class="d">고속철 11:34 → 공항 13:15 → 수속 마감 14:10. 20분 이상 지연 시 즉시 아시아나에 연락.</div>
+    </div>
+    <div class="alert">
+      <div class="t">원주행 막차 20:10</div>
+      <div class="d">인천 T2 도착 18:15. 입국·수하물에 약 1시간이 걸려 여유가 크지 않습니다. 사전 예매 필수.</div>
+    </div>
+  </div>
+</div>
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="출장 일정">
+      <button class="tab" role="tab" aria-selected="true" data-p="d1"><span class="n">01</span>9/7 선전 진입</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="d2"><span class="n">02</span>9/8 업체방문·화창베이</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="d3"><span class="n">03</span>9/9 이우 이동</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="d4"><span class="n">04</span>9/10 이우 핵심</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="d5"><span class="n">05</span>9/11 귀국</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="pl"><span class="n">▤</span>조사처</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="ck"><span class="n">☑</span>체크리스트</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="rs"><span class="n">◍</span>식사·휴식</button>
+      <button class="tab" role="tab" aria-selected="false" data-p="bk"><span class="n">✈</span>예약·연락처</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- ══════════ DAY 1 ══════════ -->
+<section role="tabpanel" id="d1">
+  <div class="shead"><h2>Day 1 — 9월 7일 (월)</h2><span class="tag">선전 진입 · 지형 파악 4h</span></div>
+  <p class="snote">첫날 목표는 계약이 아니라 지형 파악입니다. 화창베이 3개 상가의 층별 구조를 익히고 내일 상담할 업체를 골라두는 날입니다.</p>
+
+  <div class="tl">
+    <div class="row move"><div class="tm">04:50<br>05:00</div><div class="bd">
+      <div class="ti">서울 숙소 출발 — 강진희 대표이사 차량 픽업</div>
+      <div class="ds">배낭 + 24L 캐리어. 05:20까지 탑승 못 하면 서울역 공항철도 직통으로 전환.</div></div></div>
+    <div class="row move"><div class="tm">06:10</div><div class="bd">
+      <div class="ti">인천공항 제2여객터미널(T2) 도착</div>
+      <div class="ds">수하물 위탁 마감 07:40. 캐리어·배낭 모두 기내 반입 예정.</div></div></div>
+    <div class="row key"><div class="tm">08:40<br>11:35</div><div class="bd">
+      <div class="ti">대한항공 KE835 — 인천 T2 → 선전 바오안 T3<span class="pill">3h55m</span></div>
+      <div class="ds">e-티켓 180-4825439933 · PNR E8BPKY</div></div></div>
+    <div class="row move"><div class="tm">11:35<br>12:20</div><div class="bd">
+      <div class="ti">입국심사 — 전자입국신고서 QR 제시</div>
+      <div class="ds">여권 스캔·지문 등록. 질문 예상: 방문 목적(비즈니스), 체류 5일, 숙소, 귀국편.</div></div></div>
+    <div class="row move"><div class="tm">12:20<br>13:20</div><div class="bd">
+      <div class="ti">지하철 11호선 → 환승 → 화창베이</div>
+      <div class="ds">약 50분 / 택시 40분 ¥120. 도착 직후 Alipay 소액 결제 시험.</div></div></div>
+    <div class="row"><div class="tm">13:30</div><div class="bd">
+      <div class="ti">Ji호텔 화창베이 전자대하점 체크인</div>
+      <div class="ds">深南中路 2072호 · 금연층 요청 · 17층 세탁실 위치 확인
+        <div class="acts"><button class="btn j" data-taxi="hotel-sz">기사에게 보여주기</button></div></div></div></div>
+    <div class="row key"><div class="tm">14:00<br>18:00</div><div class="bd">
+      <div class="ti">조사 1 — 화창베이 1차 라운딩</div>
+      <div class="ds">賽格電子市場 · 華強電子世界 · 遠望數碼城
+        <ul>
+          <li>안내데스크에서 층별 배치도부터 확보 (1층부터 훑지 말 것)</li>
+          <li>USB 3개사 · Type-C 3개사 위치 마킹</li>
+          <li>명함 수집 및 위챗 등록 — 목표 15건</li>
+          <li>내일 심화상담할 3~4개사 선별</li>
+        </ul></div></div></div>
+    <div class="row"><div class="tm">18:00<br>19:00</div><div class="bd">
+      <div class="ti">석식 — 雲味館 윈난 쌀국수 (호텔 도보 5분)</div>
+      <div class="ds">華強廣場 지하 1층 樂淘里 · 1인 ¥30 미만 · 사진 메뉴 지목 주문 · 15분이면 끝납니다
+        <div class="acts"><button class="btn" data-taxi="yunwei">기사에게 보여주기</button></div></div></div></div>
+    <div class="row"><div class="tm">19:30<br>20:30</div><div class="bd">
+      <div class="ti">華強北步行街 야시장 산책 (호텔 도보 3분)</div>
+      <div class="ds">전자상가 보행자 거리가 저녁에 야시장으로 바뀝니다. 상권 분위기를 겸해 가볍게. 04:50 기상한 날이니 21시 이전 취침을 권합니다.</div></div></div>
+  </div>
+</section>
+
+<!-- ══════════ DAY 2 ══════════ -->
+<section role="tabpanel" id="d2" hidden>
+  <div class="shead"><h2>Day 2 — 9월 8일 (화)</h2><span class="tag core">업체 방문 + 화창베이 · 선전 마감일</span></div>
+  <p class="snote">오전 업체 방문이 확정되면서 화창베이 시간이 3시간에서 약 3시간 15분으로 재배치됐습니다. 선전에서의 모든 정산과 샘플 수령을 오늘 끝내야 합니다.</p>
+
+  <div class="card" style="border-left:3px solid var(--gold);background:#FFFDF7">
+    <h3>深圳市高达热压制品有限公司 <span style="font-weight:500;color:var(--ink3)">Shenzhen Gaoda Hot Press Products</span></h3>
+    <div class="cn">EVA 열압 성형 전문 · 2003년 설립 · 공장 4,000㎡ · 숙련공 100여 명</div>
+    <div class="meta"><b>广东省深圳市龙华区观澜街道粤德路20号</b></div>
+    <div class="meta">담당 <b>廖(랴오) 선생</b> · <b>135-1098-8790</b> · gaodaeva.com.cn</div>
+    <div class="meta" style="margin-top:9px;padding-top:9px;border-top:1px solid var(--line2)">
+      기능성 EVA 케이스 전문 제조사로 <b>의료기기·정밀기기</b> 분야 납품 실적이 있습니다.
+      필립스·티쏘·페라리·BYD·삼성 등에 EVA 패키지를 공급해 왔고, 제품군에 <b>의료용 케이스</b>가 포함되어 있습니다.
+      CVT200 캐링케이스 요구사양(EVA 하드케이스 + 내부 폼 몰딩)과 정확히 일치합니다.
+    </div>
+    <div class="acts">
+      <button class="btn j" data-taxi="appt">기사에게 보여주기</button>
+      <a class="btn" href="tel:+8613510988790">전화 걸기</a>
+    </div>
+  </div>
+
+  <div class="tl" style="margin-top:12px">
+    <div class="row"><div class="tm">07:40<br>08:20</div><div class="bd">
+      <div class="ti">조식 · 방문 자료 최종 점검</div>
+      <div class="ds">CVT200 스펙시트(중문), 부재료 요구사양서, 명함, 샘플 요청 목록.</div></div></div>
+    <div class="row move"><div class="tm">08:30</div><div class="bd">
+      <div class="ti">호텔 출발 — 디디 호출 (화창베이 → 관란, 약 30km)</div>
+      <div class="ds">평시 40분이나 출근 시간대에는 50~60분까지 늘어납니다. 09:30 약속을 지키려면 08:30 출발을 권합니다. 요금 ¥80~110.
+        <div class="acts"><button class="btn" data-taxi="appt">기사에게 보여주기</button></div></div></div></div>
+    <div class="row appt"><div class="tm">09:30<br>11:00</div><div class="bd">
+      <div class="ti">【약속】 高达热压制品 방문 — 廖 선생</div>
+      <div class="ds">EVA 캐링케이스 본건 — 이번 출장 최우선 상담:
+        <ul>
+          <li><b>금형비</b> — EVA 열압 금형 제작비, 상각 조건, 금형 소유권 귀속</li>
+          <li><b>내부 폼 몰딩</b> — 본체 + 어댑터 + Type-C 케이블 3점 수납 구조, 성형 정밀도</li>
+          <li><b>의료기기 실적</b> — 기존 의료용 케이스 납품 사례 및 샘플 실물 확인</li>
+          <li>MOQ · 수량 구간별 단가 · 샘플 및 양산 리드타임</li>
+          <li>RoHS / REACH 성적서 발급 가능 여부, 로트 추적 가능성</li>
+          <li>로고 인쇄 방식 — 실크 / UV / 열압착 각각의 단가</li>
+          <li>결제조건(T/T 선금 비율) · 수출 대행 · FOB 항구</li>
+          <li>공장 라인 실사 — 열압 설비, 검사 공정, 자재 보관</li>
+        </ul></div></div></div>
+    <div class="row move"><div class="tm">11:00<br>11:30</div><div class="bd">
+      <div class="ti">화창베이로 이동 (약 30분)</div></div></div>
+    <div class="row key"><div class="tm">11:30<br>13:00</div><div class="bd">
+      <div class="ti">조사 2 — USB 메모리 심화 상담</div>
+      <div class="ds">賽格電子市場 · 遠望數碼城
+        <ul>
+          <li>실용량 검증 요청 (H2testw) · Flash 등급 · 컨트롤러 모델명</li>
+          <li>매뉴얼·PC 소프트웨어 데이터 프리로드 서비스 가능 여부</li>
+          <li>레이저 로고 인쇄 단가 · 8GB / 16GB 구간별 단가</li>
+        </ul></div></div></div>
+    <div class="row"><div class="tm">13:00<br>13:45</div><div class="bd">
+      <div class="ti">중식 (화창베이 현지식)</div></div></div>
+    <div class="row key"><div class="tm">13:45<br>16:00</div><div class="bd">
+      <div class="ti">조사 3 — Type-C 케이블 심화 상담 및 교차 견적</div>
+      <div class="ds">華強電子世界 · 賽格電腦城
+        <ul>
+          <li>USB-IF 인증 · 도체 규격(AWG) · 정격 전류 · 굴곡 시험 횟수</li>
+          <li>단선 방지 보강 구조 · 로고 각인 방식</li>
+          <li>KC · CE · RoHS 서류 구비 여부 — 서류 불가 업체는 즉시 제외</li>
+          <li>동일 품목 최소 3개 부스 교차 견적</li>
+        </ul></div></div></div>
+    <div class="row key"><div class="tm">16:00<br>17:00</div><div class="bd">
+      <div class="ti">선전 정산 마감 — 샘플 수령 · 대금 결제 · 택배 발송</div>
+      <div class="ds">유상 샘플 3~4개사 확보, 부피 큰 샘플은 호텔 또는 회사 앞 발송 처리.</div></div></div>
+    <div class="row"><div class="tm">17:00<br>18:00</div><div class="bd">
+      <div class="ti">호텔 복귀 · RFQ 위챗 발송 · 조사내역 정리</div></div></div>
+    <div class="row"><div class="tm">18:00<br>19:00</div><div class="bd">
+      <div class="ti">석식 — 飯樓 광둥 딤섬 (호텔 도보 5분)</div>
+      <div class="ds">振華路 118-7호 · 구글 4.5 · 1인 ¥60~90 · 주말은 1시간 넘게 기다리지만 평일 저녁은 5~10분
+        <div class="acts"><button class="btn" data-taxi="fanlou">기사에게 보여주기</button></div></div></div></div>
+    <div class="row key"><div class="tm">19:30<br>21:00</div><div class="bd">
+      <div class="ti">발 마사지 90분 — 오늘은 꼭 받으십시오</div>
+      <div class="ds">관란 왕복에 화창베이 종일까지, 이번 출장에서 가장 힘든 날입니다.
+        <ul>
+          <li>靜舍足療 — 民田路 138호 購物公園 3층, 지하철 15분, 발+전신 100분 ¥388~458</li>
+          <li>도보권 대안 — 호텔 프런트에 「正规足疗店」 추천 및 예약 요청</li>
+          <li>발 마사지 60분 ¥98~198이 통상 시세. 입장 전 요금 확인</li>
+        </ul>
+        <div class="acts"><button class="btn" data-taxi="massage-sz">기사에게 보여주기</button></div></div></div></div>
+  </div>
+
+  <div class="warn">
+    <b>일정 조정 —</b> 당초 14:00~17:00에 잡았던 뤄후 훙후공원 포장재 도매상가 조사는 이번 일정에서 제외했습니다.
+    오전 업체 방문으로 시간이 부족한 데다 왕복 이동에만 40분이 들기 때문입니다.
+    포장비닐·완충재는 이우 국제상무성 2구 1층(관련 점포 약 2,400개)에서 9/10에 집중 조사합니다.
+  </div>
+  <div class="note">
+    <b>지참물 —</b> CVT200 실물 또는 정확한 외형 치수, 어댑터·케이블 실물, 컬러박스 내치수 도면.
+    EVA 금형은 치수가 확정되어야 견적이 나옵니다. 치수 없이 방문하면 개략 단가만 듣고 돌아오게 됩니다.
+  </div>
+  <div class="warn">
+    <b>주소 확인 —</b> 공개 기업정보에는 관란가도 관핑로 327호(观平路327号)로 등록되어 있어 받으신 주소(粤德路20号)와 다릅니다.
+    사무실과 공장이 나뉘어 있을 수 있으니, 전날 廖 선생에게 위챗으로 최종 주소를 다시 확인하십시오.
+  </div>
+  <div class="warn">
+    <b>오늘이 선전 마지막 날입니다.</b> 9/9는 07:40 체크아웃·10:45 출발이라 재방문 기회가 없습니다.
+    미수령 샘플, 미정산 대금, 받지 못한 견적이 남지 않도록 17:00 이전에 마감하십시오.
+  </div>
+</section>
+
+<!-- ══════════ DAY 3 ══════════ -->
+<section role="tabpanel" id="d3" hidden>
+  <div class="shead"><h2>Day 3 — 9월 9일 (수)</h2><span class="tag">이우 이동 · 사전답사 4h</span></div>
+  <p class="snote">오후 도착 시간을 조사에 씁니다. 내일 5개사를 집중 상담하기 위한 부스 위치 파악과 방문 순서 확정이 목적입니다.</p>
+
+  <div class="tl">
+    <div class="row move"><div class="tm">07:00<br>07:30</div><div class="bd">
+      <div class="ti">조식 · 선전 확보 샘플 포장</div></div></div>
+    <div class="row move"><div class="tm">07:40</div><div class="bd">
+      <div class="ti">체크아웃 → 지하철 11호선 → 바오안공항 T3 (08:40 도착)</div>
+      <div class="ds">국내선 수속 마감 09:45. 여권으로 유인 카운터 이용.
+        <div class="acts"><button class="btn" data-taxi="szx">기사에게 보여주기</button></div></div></div></div>
+    <div class="row key"><div class="tm">10:45<br>12:45</div><div class="bd">
+      <div class="ti">중국남방항공 CZ3876 — 선전 → 이우<span class="pill">2h</span></div>
+      <div class="ds">e-티켓 784-2306284093 · 위탁수하물 활용</div></div></div>
+    <div class="row move"><div class="tm">13:20</div><div class="bd">
+      <div class="ti">카이슨 푸샴 호텔 체크인 (디디 20분)</div>
+      <div class="ds">稠州北路 795호 · 프런트 7층 · 체크인 불가 시 짐 보관(寄存行李) 요청
+        <div class="acts"><button class="btn j" data-taxi="hotel-yw">기사에게 보여주기</button></div></div></div></div>
+    <div class="row key"><div class="tm">14:00<br>17:00</div><div class="bd">
+      <div class="ti">조사 4 — 국제상무성 2구 1F 사전답사</div>
+      <div class="ds">상무성 09:00~17:00 · 폐장 시각 엄수
+        <ul>
+          <li>포장백·비닐 구역 전체 스캔, 입구 게이트 번호 확인</li>
+          <li>사전 확보한 부스(10037A · 10421 · 12052A) 위치 확인</li>
+          <li>내일 집중 상담할 5개사 방문 순서 확정</li>
+          <li>Amap 오프라인 지도 저장, 부스 위치 핀 고정</li>
+        </ul></div></div></div>
+    <div class="row"><div class="tm">17:00<br>18:00</div><div class="bd">
+      <div class="ti">내일 상담 리스트·질문지 정리 · 통역 사전 브리핑</div></div></div>
+    <div class="row"><div class="tm">18:30<br>20:30</div><div class="bd">
+      <div class="ti">석식 겸 賓王夜市 (호텔에서 택시 10분)</div>
+      <div class="ds">三挺路 1호 · 구글 4.7 · 1인 ¥30~60
+        <ul>
+          <li>먹거리와 잡화가 함께 있어 소매 패키지 트렌드를 겸해 볼 수 있습니다</li>
+          <li>즉석 조리 품목 위주로 고르고 생냉식은 피하십시오</li>
+        </ul>
+        <div class="acts"><button class="btn" data-taxi="binwang">기사에게 보여주기</button></div></div></div></div>
+  </div>
+</section>
+
+<!-- ══════════ DAY 4 ══════════ -->
+<section role="tabpanel" id="d4" hidden>
+  <div class="shead"><h2>Day 4 — 9월 10일 (목)</h2><span class="tag core">출장 핵심 · 이우 종일 6.5h</span></div>
+  <p class="snote">파우치·포장비닐·완충재를 확정하는 날입니다. 상무성이 17:00에 닫히므로 이 하루가 최대 가동시간입니다.</p>
+
+  <div class="tl">
+    <div class="row move"><div class="tm">08:30</div><div class="bd">
+      <div class="ti">조식 · 통역 합류 · 도보 이동</div>
+      <div class="ds">호텔에서 상무성 2구까지 도보 2~3분.</div></div></div>
+    <div class="row key"><div class="tm">09:00<br>11:30</div><div class="bd">
+      <div class="ti">조사 5 — 2구 1F 파우치 집중 (5개사 이상)</div>
+      <div class="ds"><ul>
+        <li>EVA 하드케이스 금형비 산출 · 폼 몰딩 정밀도 확인</li>
+        <li>지퍼형 소프트 파우치 샘플 수령 (업체당 3개)</li>
+        <li>로고 인쇄방식 — 실크 / UV / 열압착 단가 비교</li>
+        <li>금형비와 인쇄판비는 반드시 분리 견적</li>
+      </ul></div></div></div>
+    <div class="row"><div class="tm">11:30<br>12:30</div><div class="bd">
+      <div class="ti">중식 (상무성 푸드코트)</div>
+      <div class="ds">점포 점심 휴식시간과 겹치므로 이 시간에 식사.</div></div></div>
+    <div class="row key"><div class="tm">12:30<br>15:00</div><div class="bd">
+      <div class="ti">조사 6 — 2구 3F · 4F 교차 견적</div>
+      <div class="ds"><ul>
+        <li>3F 전신기재 — USB·케이블을 선전 단가와 교차 검증 (협상 카드 확보)</li>
+        <li>4F 가방·케이스류 — 캐링케이스 제조사 직접 접촉</li>
+      </ul></div></div></div>
+    <div class="row key"><div class="tm">15:00<br>17:00</div><div class="bd">
+      <div class="ti">조사 7 — 재방문 협상 · 완충재 · 캐리어 구매</div>
+      <div class="ds"><ul>
+        <li>오전 최저가 2개사 재방문 — 추가 할인 협상</li>
+        <li>실측·재질 최종 확인 및 금형비 확정</li>
+        <li>부직포/EVA 대체 소재, 에어쿠션·EPE 완충재 단가 매칭</li>
+        <li>28인치 샘플 캐리어 구매 (2구 1F 箱包 구역, ¥200~300)</li>
+      </ul></div></div></div>
+    <div class="row"><div class="tm">17:00<br>18:00</div><div class="bd">
+      <div class="ti">호텔 복귀 · 샘플 촬영 · 견적 대비표 · Short-list 확정</div>
+      <div class="ds">업체별 위챗 그룹방 생성, 미결 항목을 내일 아침 리스트로 정리.</div></div></div>
+    <div class="row"><div class="tm">18:00<br>19:00</div><div class="bd">
+      <div class="ti">석식 — 이우는 영어 메뉴 식당이 많습니다</div>
+      <div class="ds">외국 상인이 상주하는 도시라 주문이 수월합니다.
+        <ul>
+          <li>Sofia Italian — 工人北路 971호 2층, 호텔 도보권</li>
+          <li>Bosphorus — 賓王路 238호, 터키·레바논, 구글 4.6</li>
+          <li>Sultan Restaurant — 터키, 리뷰 281건, 사진 메뉴 완비</li>
+        </ul>
+        <div class="acts"><button class="btn" data-taxi="sofia">Sofia 주소</button><button class="btn" data-taxi="bosphorus">Bosphorus 주소</button></div></div></div></div>
+    <div class="row key"><div class="tm">19:30<br>21:00</div><div class="bd">
+      <div class="ti">발 마사지 — 핵심일 종료 후 회복</div>
+      <div class="ds">大漢正骨足浴(賓王路 129街) 또는 호텔 프런트 추천 업소
+        <div class="acts"><button class="btn" data-taxi="massage-yw">기사에게 보여주기</button></div></div></div></div>
+  </div>
+
+  <div class="note"><b>협상 원칙 —</b> 최초 제시가를 즉석에서 수락하지 않습니다. 동일 품목은 최소 3개 부스에서 교차 견적을 받은 뒤, 사전에 정한 목표단가와 품질·인증 요건을 기준으로 판단하십시오. 현장 계약과 선금 지급은 금지입니다.</div>
+</section>
+
+<!-- ══════════ DAY 5 ══════════ -->
+<section role="tabpanel" id="d5" hidden>
+  <div class="shead"><h2>Day 5 — 9월 11일 (금)</h2><span class="tag">미결 정리 · 귀국</span></div>
+  <p class="snote">오전은 신규 발굴이 아니라 미결 정리 전용입니다. 이후는 귀국 연결을 최우선으로 움직입니다.</p>
+
+  <div class="tl">
+    <div class="row move"><div class="tm">07:30<br>08:30</div><div class="bd">
+      <div class="ti">조식 · 샘플 최종 포장 · 수하물 재분류</div>
+      <div class="ds">기내 반입분(리튬 배터리 포함 품목)과 위탁분을 분리. 총 20kg 이내 관리.</div></div></div>
+    <div class="row key"><div class="tm">09:00<br>09:40</div><div class="bd">
+      <div class="ti">조사 8 — 미결사항 마무리 · 샘플 최종 수령 및 결제</div></div></div>
+    <div class="row move"><div class="tm">09:50<br>10:20</div><div class="bd">
+      <div class="ti">체크아웃 → 디디로 이우역 (9km, 20분)</div>
+      <div class="ds">역사 보안검색 통과 필요. 샘플이 많으면 시간이 더 걸립니다.
+        <div class="acts"><button class="btn" data-taxi="yiwustn">기사에게 보여주기</button></div></div></div></div>
+    <div class="row key"><div class="tm">11:34<br>12:20</div><div class="bd">
+      <div class="ti">이우역 → 항저우동역 고속철 일등석</div>
+      <div class="ds">예약 1400828874540926 · PIN 3451 · 여권을 개찰구에 대면 통과</div></div></div>
+    <div class="row move"><div class="tm">12:40<br>13:20</div><div class="bd">
+      <div class="ti">역 구내 도보 15분 → 지하철 19호선 → 샤오산공항 T4</div></div></div>
+    <div class="row key"><div class="tm">15:10<br>18:15</div><div class="bd">
+      <div class="ti">아시아나 OZ360 — 항저우 T4 → 인천 T2<span class="pill">2h05m</span></div>
+      <div class="ds">수속 마감 14:10 · e-티켓 988-7505073140 · PNR CJXZY7</div></div></div>
+    <div class="row move"><div class="tm">18:15<br>19:20</div><div class="bd">
+      <div class="ti">입국심사 · 위탁수하물 수취 · 세관 신고</div>
+      <div class="ds">샘플 구매액이 미화 800달러를 넘으면 자진신고 (관세 30% 감면).</div></div></div>
+    <div class="row"><div class="tm">19:45<br>22:40</div><div class="bd">
+      <div class="ti">인천공항 T2 → 원주 시외버스 (₩27,800)</div>
+      <div class="ds">T2 막차 20:10. 반드시 그 이전 편으로 사전 예매.</div></div></div>
+  </div>
+
+  <div class="warn"><b>환승 여유 55분 —</b> 고속철이 20분 이상 지연되면 항저우 공항 수속 마감(14:10)이 위태로워집니다. 이우역에서 지연 안내를 보는 즉시 아시아나 예약센터에 연락하고, 항저우동역에서 택시(약 ¥180, 60분) 전환을 검토하십시오.</div>
+</section>
+
+<!-- ══════════ 조사처 ══════════ -->
+<section role="tabpanel" id="pl" hidden>
+  <div class="shead"><h2>조사처</h2><span class="tag">선전 4곳 · 이우 4구역</span></div>
+  <p class="snote">중국어 주소는 택시 기사에게 보여주거나 Amap에 그대로 검색하면 됩니다.</p>
+
+  <h3 style="font-size:15px;margin:16px 0 2px">선전 화창베이 — 전자 부자재</h3>
+  <div class="cards two">
+    <div class="card">
+      <h3>賽格電子市場 (SEG)</h3><div class="cn">화창베이 최대 규모 전자상가 · 10:00–21:00</div>
+      <div class="meta"><b>深圳市福田区华强北路1002号 赛格广场</b></div>
+      <div class="meta">USB·케이블 부스 밀집. 1층부터 훑지 말고 안내데스크에서 층별 배치도를 먼저 확보하십시오.</div>
+      <div class="acts"><button class="btn" data-taxi="seg">기사에게 보여주기</button></div>
+    </div>
+    <div class="card">
+      <h3>華強電子世界</h3><div class="cn">휴대폰 액세서리·케이블 특화 · 10:00–22:00</div>
+      <div class="meta"><b>深圳市福田区华强北路1007-1015号</b></div>
+      <div class="meta">OEM/ODM 및 레이저 로고 인쇄 대응 부스 다수. 동일 품목 3개사 교차 견적 필수.</div>
+      <div class="acts"><button class="btn" data-taxi="hqworld">기사에게 보여주기</button></div>
+    </div>
+    <div class="card">
+      <h3>遠望數碼城</h3><div class="cn">USB·메모리카드 전문 · 10:00–20:00</div>
+      <div class="meta"><b>深圳市福田区华强北路 远望数码城</b> · SEG에서 도보 3분</div>
+      <div class="meta">실용량 미달 제품이 섞여 있으므로 현장에서 H2testw 용량 검증을 요청하십시오.</div>
+      <div class="acts"><button class="btn" data-taxi="yuanwang">기사에게 보여주기 · 지도</button></div>
+    </div>
+    <div class="card">
+      <h3>Ji호텔 화창베이 전자대하점</h3><div class="cn">숙소 · 9/7~9/9 2박</div>
+      <div class="meta"><b>深圳市福田区深南中路2072号</b> · +86 755 8336 1088</div>
+      <div class="meta">지하철 화창루/화창베이역 도보 200m. 17층에 조식당·세탁실.</div>
+      <div class="acts"><button class="btn j" data-taxi="hotel-sz">기사에게 보여주기</button></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 2px">이우 국제상무성 — 포장 부재료</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>구역</th><th>성격</th><th>취급 품목 및 요령</th></tr></thead>
+    <tbody>
+      <tr><td><b>2구 1F</b><br><button class="btn" data-taxi="mart2" style="margin-top:5px;font-size:11.5px;padding:4px 8px">지도</button></td><td>핵심 목표<br>福田市场 包装袋区</td><td>파우치·EVA 하드케이스·포장비닐 약 2,400개 점포. 샘플용 28인치 캐리어도 이 구역에서 ¥200~300에 구매.</td></tr>
+      <tr><td><b>2구 3F</b></td><td>교차 검증</td><td>USB·데이터케이블. 선전 단가 대비 협상 카드 확보용.</td></tr>
+      <tr><td><b>2구 4F</b></td><td>제조사 직접</td><td>캐링케이스 제조사 직영 부스, 한국관 포함.</td></tr>
+      <tr><td><b>4구·5구</b></td><td>대체 소재</td><td>부직포/EVA 파우치, 에어쿠션 완충재, 경쟁사 패키지 벤치마킹.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 2px">사전 확보 부스 — 9/9 답사 시 위치 확인</h3>
+  <div class="cards two">
+    <div class="card">
+      <h3>Qiang Li Packing <span style="font-weight:500;color:var(--ink3)">치앙리 포장</span></h3>
+      <div class="cn">OPP/PE 방습백 · 지퍼백 전문</div>
+      <div class="booth">10037A, 2nd St, 1F, Gate 21 · District 2</div>
+      <div class="meta">두께(μm)와 인쇄판비를 분리해서 견적 요청.</div>
+    </div>
+    <div class="card">
+      <h3>Zi Yu gift bag <span style="font-weight:500;color:var(--ink3)">쯔위 기프트백</span></h3>
+      <div class="cn">종이·크라프트·부직포 파우치</div>
+      <div class="booth">10421, 5th St, 1F, Gate 23 · District 2</div>
+      <div class="meta">지류는 국내 제작이므로 부직포 파우치 위주로 확인.</div>
+    </div>
+    <div class="card">
+      <h3>Daweimao Luggage <span style="font-weight:500;color:var(--ink3)">다웨이마오 러기지</span></h3>
+      <div class="cn">EVA 하드케이스 공장 직판</div>
+      <div class="booth">12052A, 10th St, 1F, Gate 38 · District 2</div>
+      <div class="meta">금형비 산출과 폼 몰딩 정밀도가 핵심. 샘플 캐리어도 여기서 검토.</div>
+    </div>
+    <div class="card">
+      <h3>카이슨 푸샴 호텔 <span style="font-weight:500;color:var(--ink3)">凯森璞尚</span></h3>
+      <div class="cn">숙소 · 9/9~9/11 2박</div>
+      <div class="meta"><b>浙江省义乌市稠州北路795号</b> · 福田街道</div>
+      <div class="meta">상무성 2구 도보 2~3분. 프런트 7층.</div>
+      <div class="acts"><button class="btn j" data-taxi="hotel-yw">기사에게 보여주기</button></div>
+    </div>
+  </div>
+
+  <div class="note"><b>사전 검색 —</b> yiwugo.com(义乌购)에서 품목과 층을 입력해 부스 번호를 찾고, 그 번호를 Amap에 중국어로 저장해 두면 현장에서 한 시간 이상 절약됩니다. 상무성은 09:00 개장·17:00 폐장, 점심 11:30~12:30에는 자리를 비우는 점포가 많습니다.</div>
+</section>
+
+<!-- ══════════ 체크리스트 ══════════ -->
+<section role="tabpanel" id="ck" hidden>
+  <div class="shead"><h2>현장 체크리스트</h2><span class="tag">상담 1건당 10항목</span></div>
+  <p class="snote">업체마다 아래 10항목을 그 자리에서 채웁니다. 빈칸이 남으면 그 업체는 비교표에 올릴 수 없습니다.</p>
+
+  <div class="chk">
+    <div class="grp">상담 시 필수 기록</div>
+    <label class="ci"><input type="checkbox"><span class="cx">상호(중문/영문) · 담당자명 · 휴대폰 · 위챗 ID</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">부스 위치 — 구역 / 층 / 게이트 / 부스번호</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">재질 · 규격(mm) · 두께 · 색상 · 인쇄방식</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">단가 · 수량 구간별 단가 · MOQ</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">금형비와 인쇄판비 — 반드시 분리 견적</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">샘플 리드타임 · 양산 리드타임 · 초도 납기</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">RoHS / REACH 성적서 발급 가능 여부 (사진 촬영)</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">결제조건 — T/T 선금 비율 · FOB 항구 · 수출 대행</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">유상 샘플 확보 및 라벨링(업체명·부스번호·단가)</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">부스 전경 + 명함 동시 촬영 — 저녁에 구분 불가해집니다</span></label>
+
+    <div class="grp">품목별 핵심 질문</div>
+    <label class="ci"><input type="checkbox"><span class="cx"><b>파우치</b> — 내부 폼 몰딩 가능 여부, 금형비, 로고 인쇄방식, 5개사 이상</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx"><b>포장비닐</b> — OPP/PE 두께, 고주파 밀봉, ESD 표면저항, 재질 증빙</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx"><b>완충재</b> — EPE/EVA/에어쿠션, 성형 정밀도, 낙하시험 대응</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx"><b>USB 메모리</b> — 실용량 검증, Flash 등급, 컨트롤러, 데이터 프리로드</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx"><b>Type-C</b> — USB-IF 인증, AWG, 정격전류, 굴곡시험, KC·CE·RoHS</span></label>
+
+    <div class="grp">출국 전 미완료 항목</div>
+    <label class="ci"><input type="checkbox"><span class="cx">이우 통역 예약 — 9/9~9/10 2일, 일 ¥350~400 <b>(미정)</b></span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">컬러박스 내치수 도면 확보 — 파우치·완충재 사양 협의의 전제</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">원주행 시외버스 예매 — T2 출발, 막차 20:10</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">Alipay·WeChat 카드 등록 및 실명인증, 소액 결제 시험</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">전자입국신고서 작성 (s.nia.gov.cn) 및 QR 캡처</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">한국 통신사 무제한 로밍 신청 — eSIM은 방화벽 적용됨</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">중문·영문 병기 명함 200매 · CVT200 중문 스펙시트</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">멀티 어댑터 · 줄자 · 버니어캘리퍼스 · 소형 저울 · 보조배터리</span></label>
+    <label class="ci"><input type="checkbox"><span class="cx">품목별 목표단가 및 초도 발주수량 결정</span></label>
+  </div>
+  <div class="note">체크 상태는 페이지를 새로 열면 초기화됩니다. 출력해서 쓰시려면 브라우저 인쇄 기능을 사용하십시오 — 전체 일정이 한 문서로 인쇄됩니다.</div>
+</section>
+
+<!-- ══════════ 식사·휴식 ══════════ -->
+<section role="tabpanel" id="rs" hidden>
+  <div class="shead"><h2>식사 · 휴식 · 여가</h2><span class="tag">1인 이용 기준</span></div>
+  <p class="snote">하루 1만 5천 보 이상을 걷는 일정입니다. 체력 관리가 조사 성과에 직결되므로, 동선 안에서 소화되고 혼자 가도 어색하지 않은 곳만 골랐습니다.</p>
+
+  <h3 style="font-size:15px;margin:16px 0 2px">선전 — 호텔 도보권</h3>
+  <div class="cards two">
+    <div class="card">
+      <h3>雲味館 <span style="font-weight:500;color:var(--ink3)">윈웨이관 · 윈난 쌀국수</span></h3>
+      <div class="cn">1인 ¥25~35 · 호텔 도보 5분 · 15분이면 완료</div>
+      <div class="meta"><b>华强北路1019号 华强广场 지하1층 乐淘里</b></div>
+      <div class="meta">사진 메뉴를 손가락으로 지목하면 됩니다. 셀프바에서 절임채소와 소스를 담을 수 있고, 지하상가라 냉방이 좋고 대기가 짧습니다. <b>첫날 저녁에 적합.</b></div>
+      <div class="acts"><button class="btn j" data-taxi="yunwei">기사에게 보여주기</button></div>
+    </div>
+    <div class="card">
+      <h3>飯樓 <span style="font-weight:500;color:var(--ink3)">판러우 · 광둥 딤섬</span></h3>
+      <div class="cn">1인 ¥60~90 · 호텔 도보 5분 · 구글 4.5(155건)</div>
+      <div class="meta"><b>振华路118-7号</b></div>
+      <div class="meta">새우만두·차슈바오·에그타르트가 대표입니다. 딤섬은 소량 다품목이라 혼자서도 부담이 없습니다. 주문표에 수량을 적는 방식이 많으니 펜을 받으십시오. 주말엔 1시간 넘게 기다리지만 평일 저녁은 5~10분입니다.</div>
+      <div class="acts"><button class="btn j" data-taxi="fanlou">기사에게 보여주기</button></div>
+    </div>
+    <div class="card">
+      <h3>鳳凰樓 <span style="font-weight:500;color:var(--ink3)">딤섬 노포</span></h3>
+      <div class="cn">1인 ¥60~100 · 08:00~22:00</div>
+      <div class="meta"><b>华强北路2012号</b></div>
+      <div class="meta">아침 8시부터 열어 조식 대안으로도 됩니다.</div>
+    </div>
+    <div class="card">
+      <h3>THE ISTANBUL <span style="font-weight:500;color:var(--ink3)">할랄 터키식</span></h3>
+      <div class="cn">1인 ¥60~100 · 08:30~23:30</div>
+      <div class="meta"><b>紫荆城商业广场</b></div>
+      <div class="meta">영어가 통합니다. 중식이 부담스러운 날의 대안.</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 2px">이우 — 영어 메뉴 식당이 많습니다</h3>
+  <p class="snote" style="margin-bottom:10px">외국 상인이 상주하는 도시라 주문 장벽이 선전보다 훨씬 낮습니다.</p>
+  <div class="cards two">
+    <div class="card">
+      <h3>Sofia Italian <span style="font-weight:500;color:var(--ink3)">이탈리안</span></h3>
+      <div class="cn">1인 ¥70~110 · 호텔 도보권</div>
+      <div class="meta"><b>工人北路971号 2층</b></div>
+      <div class="meta">파스타·피자로 가볍게 마칠 수 있습니다.</div>
+      <div class="acts"><button class="btn" data-taxi="sofia">주소 보기</button></div>
+    </div>
+    <div class="card">
+      <h3>Bosphorus <span style="font-weight:500;color:var(--ink3)">터키 · 레바논</span></h3>
+      <div class="cn">1인 ¥60~100 · 구글 4.6(72건)</div>
+      <div class="meta"><b>宾王路238号</b></div>
+      <div class="meta">영어 메뉴 완비. 양고기와 케밥류가 대표입니다.</div>
+      <div class="acts"><button class="btn" data-taxi="bosphorus">주소 보기</button></div>
+    </div>
+    <div class="card">
+      <h3>Sultan Restaurant <span style="font-weight:500;color:var(--ink3)">터키</span></h3>
+      <div class="cn">1인 ¥90~150 · 구글 4.5(281건)</div>
+      <div class="meta">이우 최다 리뷰. 사진 메뉴가 잘 되어 있어 지목 주문이 쉽습니다. 다소 비싼 편.</div>
+    </div>
+    <div class="card">
+      <h3>賓王夜市 <span style="font-weight:500;color:var(--ink3)">야시장</span></h3>
+      <div class="cn">1인 ¥30~60 · 구글 4.7 · 택시 10분</div>
+      <div class="meta"><b>三挺路1号</b></div>
+      <div class="meta">먹거리와 잡화가 함께 있어 소매 패키지 트렌드를 겸해 볼 수 있습니다. 즉석 조리 품목 위주로 고르고 생냉식은 피하십시오.</div>
+      <div class="acts"><button class="btn j" data-taxi="binwang">기사에게 보여주기</button></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 8px">중국 식당 주문법 — QR 주문이 표준입니다</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th style="width:52px">순서</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><b>사전</b></td><td>大衆點評(Dianping)에서 상호를 검색해 <b>사진으로 먹을 것을 미리 정해</b> 두십시오. 캡처해 가면 종업원에게 그대로 보여줄 수 있습니다.</td></tr>
+      <tr><td><b>입장</b></td><td>「一个人(이거런)」 — 한 명입니다. 손가락 하나를 함께 들면 확실합니다.</td></tr>
+      <tr><td><b>확인</b></td><td>테이블에 QR이 있으면 QR 주문, 종이 메뉴를 주면 지목 주문. 「有纸质菜单吗?(여우 즈즈 차이단 마)」 — 종이 메뉴 있나요?</td></tr>
+      <tr><td><b>QR 주문</b></td><td>위챗으로 QR 스캔 → 주문 화면이 뜨면 <b>화면을 캡처</b> → 파파고 이미지 번역으로 읽고 선택. 화면 전환이 잦으니 캡처 후 번역하는 편이 빠릅니다.</td></tr>
+      <tr><td><b>지목 주문</b></td><td>사진 메뉴를 가리키고 「这个(쩌거)」 — 이것. 수량은 손가락으로.</td></tr>
+      <tr><td><b>양 조절</b></td><td>「小份(샤오펀)」 — 작은 사이즈로. 혼자 먹을 때 유용합니다.</td></tr>
+      <tr><td><b>맵기</b></td><td>「不要辣(부야오 라)」 — 맵지 않게 / 「微辣(웨이라)」 — 약간만.</td></tr>
+      <tr><td><b>결제</b></td><td>QR 주문은 주문과 동시에 선결제됩니다. 지목 주문은 식사 후 「买单(마이딴)」. 알리페이 QR로 결제.</td></tr>
+      <tr><td><b>유의</b></td><td>중국은 팁이 없습니다. 다만 광둥 식당은 <b>茶位費</b>(차 자릿세, 1인 ¥2~10)와 물수건 요금이 별도로 붙을 수 있습니다.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="scroll" style="margin-top:12px">
+  <table class="tbl">
+    <thead><tr><th>한국어</th><th>중국어</th><th>발음</th></tr></thead>
+    <tbody>
+      <tr><td>한 명입니다</td><td>一个人</td><td>이거런</td></tr>
+      <tr><td>종이 메뉴 있나요?</td><td>有纸质菜单吗？</td><td>여우 즈즈 차이단 마</td></tr>
+      <tr><td>이것 주세요</td><td>这个，谢谢</td><td>쩌거, 셰셰</td></tr>
+      <tr><td>맵지 않게 해주세요</td><td>不要辣</td><td>부야오 라</td></tr>
+      <tr><td>작은 사이즈로 주세요</td><td>要小份</td><td>야오 샤오펀</td></tr>
+      <tr><td>계산해 주세요</td><td>买单</td><td>마이딴</td></tr>
+      <tr><td>따뜻한 물 주세요</td><td>要热水</td><td>야오 러수이</td></tr>
+      <tr><td>포장해 주세요</td><td>打包</td><td>다바오</td></tr>
+      <tr><td>화장실이 어디예요?</td><td>洗手间在哪里？</td><td>시서우젠 짜이 나리</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 8px">마사지</h3>
+  <div class="cards two">
+    <div class="card">
+      <h3>靜舍足療 <span style="font-weight:500;color:var(--ink3)">선전</span></h3>
+      <div class="cn">발+전신 100분 ¥388~458 · 지하철 15분</div>
+      <div class="meta"><b>民田路138号 购物公园 3층</b></div>
+      <div class="meta">해외 출장객 후기가 좋은 곳입니다. <b>9/8 저녁에 권장</b> — 관란 왕복에 화창베이 종일까지 겹치는 가장 힘든 날입니다.</div>
+      <div class="acts"><button class="btn j" data-taxi="massage-sz">기사에게 보여주기</button></div>
+    </div>
+    <div class="card">
+      <h3>大漢正骨足浴 <span style="font-weight:500;color:var(--ink3)">이우</span></h3>
+      <div class="cn">9/10 저녁 권장</div>
+      <div class="meta"><b>宾王路129街</b></div>
+      <div class="meta">이우 핵심 조사일을 마친 뒤 회복용. 호텔 프런트 추천 업소도 좋습니다.</div>
+      <div class="acts"><button class="btn j" data-taxi="massage-yw">기사에게 보여주기</button></div>
+    </div>
+  </div>
+  <div class="warn" style="margin-top:12px">
+    <b>업소 선택 기준 —</b> 「正规(정규)」 표기가 있는 체인점이나 大衆點評 평점 4.3 이상만 이용하십시오.
+    가장 안전한 방법은 호텔 프런트에 <b>「正规足疗店」 추천과 예약</b>을 부탁하는 것입니다.
+    입장 전 요금을 확인하고(발 마사지 60분 ¥98~198이 통상), 서비스마다 추가 요금이나 팁을 강하게 요구하는 곳은 이용하지 마십시오.
+    심야에 길에서 접근하는 호객에는 일절 응하지 마십시오. 21시 이전에 마치고 복귀하는 것이 다음 날을 위해 낫습니다.
+  </div>
+
+  <h3 style="font-size:15px;margin:22px 0 8px">관광 — 솔직한 판단</h3>
+  <p class="snote">이번 일정에는 반나절 이상 걸리는 관광 슬롯이 없습니다. 무리하면 다음 날 조사에 지장이 갑니다. 동선 안에서 소화되는 세 곳으로 한정하시길 권합니다.</p>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>장소</th><th>언제</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><b>華強北步行街</b></td><td>9/7 또는 9/8 저녁<br>호텔 도보 3분</td><td>전자상가 보행자 거리가 저녁에 야시장으로 바뀝니다. 상권 분위기 파악을 겸할 수 있어 업무 연계성이 가장 높습니다.</td></tr>
+      <tr><td>蓮花山公園<br><button class="btn" data-taxi="lianhua" style="margin-top:5px;font-size:11.5px;padding:4px 8px">지도</button></td><td>19:00~20:30<br>지하철 2정거장</td><td>덩샤오핑 동상과 선전 시내 전망으로 유명한 시민공원. 입장 무료, 정상까지 도보 20분이며 전동카트 ¥8. 체력에 여유가 있는 날에만.</td></tr>
+      <tr><td><b>賓王夜市</b></td><td>9/9 저녁<br>택시 10분</td><td>이우 대표 야시장. 석식과 묶어 소화하는 것이 효율적입니다.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="warn" style="margin-top:12px">
+    <b>항저우 서호(西湖)는 불가합니다 —</b> 9/11 항저우 체류는 고속철 도착부터 공항 수속까지 여유가 55분뿐입니다. 서호를 보시려면 별도 일정이 필요합니다.
+  </div>
+  <div class="note">
+    <b>체력 관리 —</b> 9월 선전·이우는 낮 최고 30~33℃로 덥고 습한데 실내 냉방은 강합니다.
+    얇은 겉옷을 챙기고, 구두 대신 운동화를 신고, 생수를 늘 들고 다니십시오. 저녁에는 일정을 늘리기보다 회복을 우선하는 편이 다음 날 성과에 낫습니다.
+  </div>
+</section>
+
+<!-- ══════════ 예약·연락처 ══════════ -->
+<section role="tabpanel" id="bk" hidden>
+  <div class="shead"><h2>예약 확정 내역</h2><span class="tag">2026.08.12 결제 완료</span></div>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>구분</th><th>내용</th><th>예약번호 / e-티켓</th><th class="num">결제액</th></tr></thead>
+    <tbody>
+      <tr><td>항공 ①</td><td><b>KE835</b><br>인천 T2 → 선전 T3<br>9/7 08:40–11:35</td><td>1400829014962164<br>180-4825439933<br>PNR E8BPKY</td><td class="num">317,150</td></tr>
+      <tr><td>항공 ②</td><td><b>CZ3876</b><br>선전 → 이우<br>9/9 10:45–12:45</td><td>1400829016428980<br>784-2306284093</td><td class="num">161,600</td></tr>
+      <tr><td>고속철</td><td>이우역 → 항저우동역<br>9/11 11:34 · 일등석</td><td>1400828874540926<br>PIN 3451</td><td class="num">14,000</td></tr>
+      <tr><td>항공 ③</td><td><b>OZ360</b><br>항저우 T4 → 인천 T2<br>9/11 15:10–18:15</td><td>1400829015899444<br>988-7505073140<br>PNR CJXZY7</td><td class="num">388,600</td></tr>
+      <tr><td>숙박 ①</td><td>Ji호텔 선전 화창베이<br>9/7~9/9 2박</td><td>1400828287312843</td><td class="num">195,650</td></tr>
+      <tr><td>숙박 ②</td><td>카이슨 푸샴 호텔 (이우)<br>9/9~9/11 2박</td><td>1400828287851413</td><td class="num">130,026</td></tr>
+      <tr><td><b>기 결제 소계</b></td><td colspan="2"></td><td class="num"><b>1,207,026</b></td></tr>
+      <tr><td><b>총 승인요청액</b></td><td colspan="2">세부항목 1,950,026 + 예비비 199,974</td><td class="num"><b>2,150,000</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="shead" style="margin-top:24px"><h2>비상 연락처</h2></div>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>구분</th><th>연락처</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td><b>주광저우 총영사관</b></td><td>대표 +86-20-2919-2999<br>긴급 +86-139-2247-3457</td><td>선전 관할(광둥성)</td></tr>
+      <tr><td><b>주상하이 총영사관</b></td><td>대표 +86-21-6295-5000<br>긴급 +86-138-1650-9503</td><td>이우 관할(저장성)</td></tr>
+      <tr><td>영사콜센터</td><td>+82-2-3210-0404</td><td>24시간 · 여권 분실 시 최우선</td></tr>
+      <tr><td>중국 긴급번호</td><td>경찰 110 · 소방 119 · 응급 120</td><td>중국어 응대 원칙 — 호텔 프런트 경유 권장</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="shead" style="margin-top:24px"><h2>현장 중국어</h2></div>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>한국어</th><th>중국어</th><th>발음</th></tr></thead>
+    <tbody>
+      <tr><td>최소 주문 수량이 얼마예요?</td><td>起订量是多少？</td><td>치딩량 스 뚜어사오</td></tr>
+      <tr><td>우리 로고 인쇄 가능해요?</td><td>可以印我们的logo吗？</td><td>커이 인 워먼더 로고 마</td></tr>
+      <tr><td>금형비는 얼마예요?</td><td>开模费多少钱？</td><td>카이모페이 뚜어사오 첸</td></tr>
+      <tr><td>샘플 하나 살 수 있어요?</td><td>可以买一个样品吗？</td><td>커이 마이 이거 양핀 마</td></tr>
+      <tr><td>납기가 며칠 걸려요?</td><td>交期要多少天？</td><td>쟈오치 야오 뚜어사오 톈</td></tr>
+      <tr><td>RoHS 검사보고서 있어요?</td><td>有RoHS检测报告吗？</td><td>여우 RoHS 젠처바오까오 마</td></tr>
+      <tr><td>견적서 주세요</td><td>请给我报价单</td><td>칭 게이워 바오쟈딴</td></tr>
+      <tr><td>위챗 추가해도 될까요?</td><td>可以加个微信吗？</td><td>커이 쟈거 웨이신 마</td></tr>
+      <tr><td>두 번에 나눠 결제해도 돼요?</td><td>可以分两次付吗？</td><td>커이 펀 량츠 푸 마</td></tr>
+      <tr><td>짐을 맡길 수 있을까요?</td><td>可以寄存行李吗？</td><td>커이 지춘 싱리 마</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note"><b>Alipay 수수료 —</b> 건당 200위안 이하는 수수료가 없고 초과하면 결제액 전체에 3%가 붙습니다. 300위안을 결제해야 한다면 「可以分两次付吗?」로 두 번에 나눠 달라고 요청하십시오.</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">씨엔브이텍(주) 경영지원부 · 강철희 전무이사 · 2026.09.07–09.11<br>
+  발권·입국·통관 기준은 출발 직전 공식 안내를 재확인하는 것을 조건으로 합니다.</div>
+</footer>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="택시 기사용 주소">
+  <div class="ovc">
+    <div class="lb" id="ovLb">기사에게 이 화면을 보여주세요</div>
+    <div class="zh" id="ovZh"></div>
+    <div class="ko" id="ovKo"></div>
+    <div class="ovacts">
+      <button class="btn p" id="ovCopy">주소 복사</button>
+      <a class="btn j" id="ovAmap" target="_blank" rel="noopener">高德지도</a>
+      <a class="btn" id="ovGmap" target="_blank" rel="noopener">구글지도</a>
+    </div>
+    <div class="ovhint">중국에서 구글지도는 한국 통신사 로밍 상태에서만 열립니다. 로밍이 아니면 高德지도를 쓰십시오.</div>
+    <div class="cl"><button class="btn" id="ovClose">닫기</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 목적지 사전 — 중문 주소는 기사에게 그대로 보여주면 됩니다 */
+  /* 목적지 — [중문주소, 한글명, 위도, 경도] · 좌표가 없으면 주소로 검색 */
+  var DEST = {
+    "hotel-sz":  ["深圳市福田区深南中路2072号 全季酒店(华强北电子大厦店)", "Ji호텔 선전 화창베이 전자대하점", 22.5425, 114.0888],
+    "seg":       ["深圳市福田区华强北路1002号 赛格广场", "賽格電子市場 (SEG)", 22.541493, 114.087134],
+    "hqworld":   ["深圳市福田区华强北路1015号 华强电子世界", "華強電子世界", 22.542924, 114.086058],
+    "yuanwang":  ["深圳市福田区华强北路 远望数码城", "遠望數碼城", 22.545511, 114.087024],
+    "szx":       ["深圳宝安国际机场 T3航站楼", "선전 바오안공항 제3터미널", 22.6393, 113.8106],
+    "appt":      ["广东省深圳市龙华区观澜街道粤德路20号 深圳市高达热压制品有限公司", "고달열압제품 · 廖 선생 13510988790", null, null],
+    "hotel-yw":  ["浙江省义乌市福田街道稠州北路795号 凯森璞尚酒店", "카이슨 푸샴 호텔 (이우)", 29.334919, 120.107130],
+    "mart2":     ["浙江省义乌市稠州北路 国际商贸城二区", "국제상무성 2구", 29.335098, 120.106287],
+    "yiwustn":   ["义乌市后宅街道北站大道333号 义乌站", "이우역", 29.3846, 120.0463],
+    "yunwei":    ["深圳市福田区华强北路1019号 华强广场 地下一层 乐淘里 云味馆", "윈웨이관 — 윈난 쌀국수", 22.543680, 114.086350],
+    "fanlou":    ["深圳市福田区振华路118-7号 饭楼", "판러우 — 광둥 딤섬", 22.544630, 114.083570],
+    "massage-sz":["深圳市福田区民田路138号 购物公园3层 静舍足疗", "징서족료 — 발 마사지", 22.536419, 114.053288],
+    "lianhua":   ["深圳市福田区红荔路6030号 莲花山公园", "롄화산공원", 22.554571, 114.057378],
+    "binwang":   ["浙江省义乌市三挺路1号 宾王夜市", "빈왕야시장", 29.312651, 120.090077],
+    "bosphorus": ["浙江省义乌市宾王路238号 Bosphorus", "보스포루스 — 터키·레바논식", 29.314006, 120.094081],
+    "sofia":     ["浙江省义乌市工人北路971号2层 索菲亚意大利餐厅", "소피아 — 이탈리안", 29.335180, 120.101760],
+    "massage-yw":["浙江省义乌市宾王路129街 大汉正骨足浴", "대한정골족욕 — 발 마사지", 29.317260, 120.089299]
+  };
+
+  /* 탭 전환 */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('[role="tabpanel"]'));
+  function show(id){
+    tabs.forEach(function(t){ t.setAttribute("aria-selected", String(t.dataset.p === id)); });
+    panels.forEach(function(p){ p.hidden = (p.id !== id); });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener("click", function(){ show(t.dataset.p); });
+    t.addEventListener("keydown", function(e){
+      var i = tabs.indexOf(t), n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft")  n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n) { e.preventDefault(); n.focus(); show(n.dataset.p); }
+    });
+  });
+
+  /* 택시 카드 + 지도 */
+  var ov = document.getElementById("ov"),
+      ovZh = document.getElementById("ovZh"),
+      ovKo = document.getElementById("ovKo"),
+      ovCopy = document.getElementById("ovCopy"),
+      ovAmap = document.getElementById("ovAmap"),
+      ovGmap = document.getElementById("ovGmap"),
+      curAddr = "", lastFocus = null;
+
+  function mapUrls(zh, lat, lng){
+    var q = encodeURIComponent(zh);
+    var g = (lat && lng)
+      ? "https://www.google.com/maps/search/?api=1&query=" + lat + "," + lng
+      : "https://www.google.com/maps/search/?api=1&query=" + q;
+    var a = "https://ditu.amap.com/search?query=" + q;
+    return [g, a];
+  }
+
+  function openDest(key){
+    var d = DEST[key];
+    if (!d) return;
+    curAddr = d[0];
+    ovZh.textContent = d[0];
+    ovKo.textContent = d[1];
+    var u = mapUrls(d[0], d[2], d[3]);
+    ovGmap.href = u[0];
+    ovAmap.href = u[1];
+    lastFocus = document.activeElement;
+    ov.classList.add("on");
+    document.getElementById("ovClose").focus();
+  }
+  function closeDest(){
+    ov.classList.remove("on");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  /* 주소 복사 — 클립보드 API 실패 시 수동 선택으로 대체 */
+  function copyAddr(){
+    if (!curAddr) return;
+    var done = function(){ toast("주소를 복사했습니다"); };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(curAddr).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = curAddr;
+        ta.style.cssText = "position:fixed;top:0;left:0;opacity:0";
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? done() : toast("주소를 길게 눌러 복사하십시오");
+      } catch (e) { toast("주소를 길게 눌러 복사하십시오"); }
+    }
+  }
+
+  document.addEventListener("click", function(e){
+    var b = e.target.closest("[data-taxi]");
+    if (b) { e.preventDefault(); openDest(b.dataset.taxi); return; }
+    if (e.target.id === "ovCopy") { copyAddr(); return; }
+    if (e.target.id === "ovClose" || e.target === ov) closeDest();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && ov.classList.contains("on")) closeDest();
+  });
+
+  /* 알림 */
+  var tEl = document.getElementById("toast"), tTimer;
+  function toast(msg){
+    tEl.textContent = msg; tEl.classList.add("on");
+    clearTimeout(tTimer);
+    tTimer = setTimeout(function(){ tEl.classList.remove("on"); }, 2200);
+  }
+
+  /* D-카운터 — 출발일 기준 */
+  (function(){
+    var dep = new Date(2026, 8, 7);         // 2026-09-07
+    var ret = new Date(2026, 8, 11, 23, 59); // 2026-09-11
+    var now = new Date();
+    var day = 864e5;
+    var diff = Math.ceil((dep - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / day);
+    var el = document.getElementById("dcount"), lb = document.getElementById("dlabel");
+    if (now > ret)      { el.textContent = "일정 종료"; lb.textContent = "귀국 완료"; }
+    else if (diff > 0)  { el.textContent = "D-" + diff; lb.textContent = "출발까지"; }
+    else if (diff === 0){ el.textContent = "D-DAY";  lb.textContent = "오늘 출발합니다"; }
+    else {
+      var n = Math.min(5, 1 - diff);
+      el.textContent = "Day " + n; lb.textContent = "출장 " + n + "일차";
+      var map = { 1:"d1", 2:"d2", 3:"d3", 4:"d4", 5:"d5" };
+      if (map[n]) show(map[n]);
+    }
+  })();
+})();
+</script>
+</body>
+</html>
